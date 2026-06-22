@@ -109,9 +109,24 @@ cart.forEach((cartItem) =>{
     document.querySelectorAll('.js-delete-link').forEach((link) =>{
       link.addEventListener('click', ()  => {
        const productId = link.dataset.productId;
+
+       let deleteQuantity = 0;
+
+       cart.forEach((cartItem) =>{
+          if(cartItem.productId === productId){
+        deleteQuantity = cartItem.quantity;
+       }
+
+       });
+     
        removeFromCart(productId);
 
+       cartQuantity -=deleteQuantity;
+
+       document.querySelector('.js-cart-items-count').innerHTML = cartQuantity;
+
        const container = document.querySelector(`.js-cart-item-container-${productId}`);
+       
        container.remove();
        
 

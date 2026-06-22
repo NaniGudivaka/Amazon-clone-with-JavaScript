@@ -81,11 +81,23 @@ document.querySelectorAll('.js-add-to-cart')
 
     button.addEventListener('click', () => {
 
+      const productContainer = button.closest('.product-container');
+
+      const addMessage = productContainer.querySelector('.added-to-cart');
+
+      addMessage.classList.add('added-to-cart-visible');
+
+       setTimeout(() =>{
+        addMessage.classList.remove('added-to-cart-visible');
+      }, 1500);
+      
+
       const productId = button.dataset.productId;
 
       addToCart(productId);
 
       updateCartQuantity();
+      // console.log(addMessage);
 
 
     });
