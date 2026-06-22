@@ -2,6 +2,14 @@ import {cart, removeFromCart} from '../data/cart.js';
 import { products } from '../data/products.js';
 import { moneyCents } from './utils/money.js';
 
+let cartQuantity = 0;
+
+cart.forEach((cartItem) => {
+  cartQuantity += cartItem.quantity;
+});
+
+document.querySelector('.js-cart-items-count').innerHTML = cartQuantity;
+
 let cartSummaryHTML = '';
 
 cart.forEach((cartItem) =>{
