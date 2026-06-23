@@ -218,3 +218,18 @@
     padding: 12px;
   }
 }
+.orders-note {
+  max-width: 700px;
+  margin: 60px auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.orders-note h2 {
+  margin-bottom: 10px;
+}
+
+.orders-note p {
+  line-height: 1.6;
+  color: #565959;
+}
