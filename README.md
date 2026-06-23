@@ -48,6 +48,35 @@ Planned Improvements:
 * Payment gateway integration
 * Database support
 
+
+## Recent Updates
+
+### Search Functionality
+
+* Added product search using product names and keywords.
+* Search can be triggered using the search button or Enter key.
+* Displays a "No Products Found" message when no matching products are available.
+
+### Cart Improvements
+
+* Cart quantity updates instantly when products are added.
+* Added visual confirmation message when a product is added to the cart.
+* Improved cart count synchronization across the application.
+
+### Login Page (Demo)
+
+* Added a simple login page using mobile number authentication.
+* Accepts any valid 10-digit mobile number.
+* Implemented frontend-only protected route functionality.
+* No backend or database is currently connected.
+
+### UI Enhancements
+
+* Improved user experience for product searching.
+* Added empty-state handling for unavailable products.
+* Fixed mobile browser issues related to cart display and product rendering.
+
+
 ## Author
 
 Nani Gudivaka
