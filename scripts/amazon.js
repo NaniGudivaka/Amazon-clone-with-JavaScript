@@ -3,6 +3,10 @@ import{products} from '../data/products.js';
 import { moneyCents } from './utils/money.js';
 
 
+function renderProducts(products){
+
+
+
 let productsHTML = '';
 products.forEach((product) => {
 
@@ -62,6 +66,11 @@ products.forEach((product) => {
 });
 document.querySelector('.js-products-grid').innerHTML = productsHTML;
 
+attachCartEvents();
+}
+
+renderProducts(products);
+
 
 
 function updateCartQuantity(){
@@ -75,6 +84,9 @@ function updateCartQuantity(){
        document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
 
 }
+
+function attachCartEvents(){
+
 
 document.querySelectorAll('.js-add-to-cart')
   .forEach((button) => {
@@ -102,6 +114,52 @@ document.querySelectorAll('.js-add-to-cart')
 
     });
 
+  });
+}
+
+  //search button code 
+
+  document.querySelector('.search-button')
+  .addEventListener('click', () => {
+
+    const searchText = document.querySelector('.search-bar')
+      .value
+      .toLowerCase();
+
+    const filteredProducts = products.filter((product) => {
+
+      const nameMatch =
+        product.name.toLowerCase().includes(searchText);
+
+      const keywordMatch =
+        product.keywords.some((keyword) =>
+          keyword.toLowerCase().includes(searchText)
+        );
+
+      return nameMatch || keywordMatch;
+    });
+
+    if(filteredProducts.length === 0){
+      document.querySelector('.js-products-grid').innerHTML = 
+      `<div class="no-products">
+      No Products Found
+      </div>
+      
+      `;
+      return;
+    }
+
+    renderProducts(filteredProducts);
+    // attachCartEvents();
+  });
+
+  //support key
+  document.querySelector('.search-bar')
+  .addEventListener('keydown', (event) => {
+
+    if (event.key === 'Enter') {
+      document.querySelector('.search-button').click();
+    }
   });
 
 

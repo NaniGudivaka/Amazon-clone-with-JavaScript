@@ -157,3 +157,12 @@
 .added-to-cart-visible {
   opacity: 1;
 }
+.no-products{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  font-size: 35px;
+  font-weight: bold;
+  padding-left: 700px;
+}
