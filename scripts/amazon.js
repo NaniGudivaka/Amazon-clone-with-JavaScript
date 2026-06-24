@@ -167,3 +167,20 @@ document.querySelectorAll('.js-add-to-cart')
 
 
 
+  //logout button function code 
+  document.querySelector('.js-btn-logout').addEventListener('click', () =>{
+    
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+    if(isLoggedIn){
+      localStorage.removeItem('isLoggedIn');
+      window.location.replace('index.html');
+
+    }
+   
+  });
+
+
+
+
+

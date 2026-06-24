@@ -166,3 +166,11 @@
   font-weight: bold;
   padding-left: 700px;
 }
+.logout-btn{
+  padding: 12px;
+  color: white;
+  font-weight: bold;
+  background-color: #131921;
+  border: none;
+  font-size: 18px;
+}

@@ -2,7 +2,8 @@
 const isLoggedIn = localStorage.getItem('isLoggedIn');
 
 if (isLoggedIn) {
-  window.location.href = 'amazon.html';
+  window.location.replace('amazon.html');
+
 }
 
 
